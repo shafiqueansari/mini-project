@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+.main {
+    background-image: url("images/netflix-bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    position: relative;     /**releative to normal static position**/ 
+}
+.main .box {
+    position: absolute;    /**does not reserve space means the element removed from normal document flow **/
+    top: 0;
+    height: 70vh;
+    width: 100%;
+    background-color: black;
+    opacity: 0.7;     /**its for background img transparency**/
+}
+nav {
+    max-width: 60vw;     /** vw=view width**/
+    margin: auto;        /**used to center an element horizontally**/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 62px;
+    z-index: 10;         /**used to control stack order of overlapping element**/
+    position: relative;
+}
+nav img {
+    width: 154px;
+}
+nav button {
+    z-index: 10;
+}
+.hero {
+    height: calc(100% - 62px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+.hero p {
+    font-size: 18px;
+    font-weight: 400;
+    max-width: 600px;
+}
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.hero input {
+    padding: 10px 14px;
+    color: white;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: rgba(23, 23, 23, 0.7);
+    border: 1px solid rgba(246, 238, 238, 0.5);
+}
+.separation {
+    height: 7px;
+    background-color: #2e2c2c;
+}
+.btn {
+    padding: 3px 8px;
+    background-color: rgba(248, 243, 243, 0.021);
+    border: 1px solid white;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn-red {
+    background-color: red;
+    padding: 10px 24px;
+    font-size: 16px;
+}
+.btn-red-sm {
+    background-color: red;
+    color: white;
+}
+.feature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 70vw;
+    margin: auto;
+    padding: 50px 0;
+    flex-wrap: wrap;       /**allow flex item to wrap onto multiple lines means in small screen its help to maintain**/
+}
+.feature h2 {
+    font-size: 48px;
+    font-weight: bolder;
+}
+.feature p {
+    font-size: 24px;
+}
+.feature > div {
+    flex: 1;
+    min-width: 300px;
+}
+.secimg img {
+    width: 100%;
+    max-width: 555px;
+}
+.faq {
+    background: black;
+    padding: 34px;
+}
+.faq h2 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+.faq-box {
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d2d2d;
+    font-size: 24px;
+    padding: 24px;
+    max-width: 60vw;
+    margin: 10px auto;
+    cursor: pointer;
+}
+.faq-box:hover {
+    background-color: rgb(37, 36, 36);
+}
+footer {
+    max-width: 60vw;
+    margin: auto;
+    padding: 40px 14px;
+}
+footer .question {
+    padding: 34px 0;
+}
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+.footer-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .feature {                                /**this part is when we try to see this in other devices like mobiles ,tabs etc**/
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-buttons {
+        flex-direction: column;
+    }
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px;
+    }
+}
